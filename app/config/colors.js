@@ -1,0 +1,21 @@
+export default {
+    primary: "#fc5c65",
+    darkPrimary: '#fa2534',
+    secondary: "#4ecdc4",
+    black: "#000",
+    white: "#fff",
+    mediumGrey: "#6e6969",
+    softGrey: "#f8f4f4",
+    lessSoftGrey: "#e8e6e6",
+    danger: "#ff5252",
+    dark: "#0c0c0c",
+    orange: "#fd9644",
+    yellow: "#fed330",
+    green: "#26de81",
+    cyan: "#2bcbba",
+    lightblue: "#45aaf2",
+    blue: "#4b7bec",
+    purple: '#a65ce9',
+    greyblue: '#738ca2',
+    beige: '#f5f5dc'
+}
