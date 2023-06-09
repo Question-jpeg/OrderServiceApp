@@ -54,7 +54,7 @@ import LoadingButton from "./../components/LoadingButton";
 
 // import ImageView from "../components/ImageView";
 import ImageView from "react-native-image-viewing";
-import { getUTCDateText } from './../utils/getDate';
+import { getUTCDateText } from "./../utils/getDate";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required("Должно быть заполнено"),
@@ -376,7 +376,7 @@ export default function ProductDetailsScreen({ navigation, route }) {
     const addedImagesObjects = [
       ...addedImages.map((image) => ({
         file_thumbnail: image,
-        file: image
+        file: image,
       })),
     ];
     if (product.files)
@@ -783,6 +783,25 @@ export default function ProductDetailsScreen({ navigation, route }) {
                     />
                   </Collapsible>
 
+                  <AppFormModalField
+                    onSelect={(button) => setPeriod(button.value)}
+                    name="time_unit"
+                    title="Период"
+                    headerText="Выберите период для товара "
+                    headerProductTitle={product.title}
+                    buttons={[
+                      { label: "Сутки", value: "D" },
+                      { label: "Час", value: "H" },
+                    ]}
+                    blockErrors={blockErrors}
+                    icon={
+                      <MaterialCommunityIcons
+                        name="clock-outline"
+                        size={25}
+                        color={colors.mediumGrey}
+                      />
+                    }
+                  />
                   <AppFormComplexField
                     name="unit_price"
                     blockErrors={blockErrors}
@@ -806,25 +825,6 @@ export default function ProductDetailsScreen({ navigation, route }) {
                       paddingVertical: 2,
                     }}
                     title="Цена"
-                  />
-                  <AppFormModalField
-                    onSelect={(button) => setPeriod(button.value)}
-                    name="time_unit"
-                    title="Период"
-                    headerText="Выберите период для товара "
-                    headerProductTitle={product.title}
-                    buttons={[
-                      { label: "Сутки", value: "D" },
-                      { label: "Час", value: "H" },
-                    ]}
-                    blockErrors={blockErrors}
-                    icon={
-                      <MaterialCommunityIcons
-                        name="clock-outline"
-                        size={25}
-                        color={colors.mediumGrey}
-                      />
-                    }
                   />
                   <AppFormComplexField
                     name="min_unit"
